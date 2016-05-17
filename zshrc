@@ -109,3 +109,23 @@ CUSTOM_FILE=~/.zshrc-custom
 if [ -r $CUSTOM_FILE ]; then
     source $CUSTOM_FILE
 fi
+
+ssha() {
+    ssh-add -l &>/dev/null
+    if [ "$?" -eq "2" ]; then
+      test -r ~/.ssh-agent && \
+        eval "$(<~/.ssh-agent)" >/dev/null
+
+      ssh-add -l &>/dev/null
+      if [ "$?" -eq "2" ]; then
+        (umask 066; ssh-agent > ~/.ssh-agent)
+        eval "$(<~/.ssh-agent)" >/dev/null
+        ssh-add -t300
+      fi
+    fi
+}
+
+addkey() {
+    ssha
+    ssh-add -t300 ~/.ssh/$1
+}
