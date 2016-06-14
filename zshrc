@@ -54,6 +54,15 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:~/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export PATH=$PATH:~/src/go/bin
+
+if [ "${GOPATH}" = "" ]; then
+    export GOPATH=~/src/go
+else
+    export GOPATH=$GOPATH:~/src/go
+fi
+
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
