@@ -66,7 +66,14 @@ fi
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+if [ -e /etc/slackware-version ]; then
+    # If we're on slackware we want i3 to open konsole instead of xterm
+    export TERMINAL=konsole
+fi
+
+# Wish I could learn emacs
 export EDITOR=vim
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -94,7 +101,12 @@ alias eh='sudo vim /etc/hosts'
 alias gdc='git diff --cached'
 alias dm='docker-machine'
 alias dc='docker-compose'
-alias ds='du -hs * | gsort -h'
+if [ ! type gsort > /dev/null ]; then
+    # Mac OSX with correct GNU sort installed
+    alias ds='du -hs * | gsort -h'
+else
+    alias ds='du -hs * | sort -h'
+fi
 alias df='df -h'
 
 # custom thefuck loading if installed
