@@ -98,9 +98,6 @@ export EDITOR=vim
 
 
 alias eh='sudo vim /etc/hosts'
-alias gdc='git diff --cached'
-alias dm='docker-machine'
-alias dc='docker-compose'
 if type gsort > /dev/null; then
     # Mac OSX with correct GNU sort installed
     alias ds='du -hs * | gsort -h'
@@ -108,6 +105,14 @@ else
     alias ds='du -hs * | sort -h'
 fi
 alias df='df -h'
+
+# GIT aliases
+alias gdc='git diff --cached'
+alias gadd='git add'
+
+# Docker aliases
+alias dm='docker-machine'
+alias dc='docker-compose'
 
 # custom thefuck loading if installed
 if [ -n $commands[thefuck] ]; then
