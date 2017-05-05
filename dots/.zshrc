@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx history grunt colorize bower)
+plugins=(git z history grunt colorize bower)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,6 +73,8 @@ fi
 
 # Wish I could learn emacs
 export EDITOR=vim
+
+export LESS=-R
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
