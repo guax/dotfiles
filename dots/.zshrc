@@ -55,6 +55,7 @@ export PATH=$PATH:~/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export PATH=$PATH:~/src/go/bin
+export PATH=~/.npm-global/bin:$PATH
 
 if [ "${GOPATH}" = "" ]; then
     export GOPATH=~/src/go
@@ -137,6 +138,8 @@ CUSTOM_FILE=~/.zshrc-custom
 if [ -r $CUSTOM_FILE ]; then
     source $CUSTOM_FILE
 fi
+
+source .functions
 
 ssha() {
     ssh-add -l &>/dev/null

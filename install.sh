@@ -38,6 +38,9 @@ if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
     fi
 fi
 
+# ensure we have npm global dir
+mkdir .npm-global
+
 cd $PWD
 
 env zsh
