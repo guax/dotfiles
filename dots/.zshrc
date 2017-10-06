@@ -49,6 +49,8 @@ plugins=(git z history grunt colorize bower)
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT="%{$fg[grey]%}$(hostname)%{$reset_color%} $PROMPT"
+
 # User configuration
 
 export PATH=$PATH:~/bin
