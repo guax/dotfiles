@@ -111,6 +111,7 @@ else
 fi
 alias df='df -h'
 
+alias kb='keybase'
 # GIT aliases
 alias gdc='git diff --cached'
 alias gadd='git add'
